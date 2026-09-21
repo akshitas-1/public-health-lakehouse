@@ -64,6 +64,8 @@ Comparing life expectancy for 2019 across the three sources for every country al
 
 Looking at Central African Republic year by year:
 
+![Central African Republic life expectancy, WHO versus World Bank](docs/images/charts/caf_life_expectancy_two_sources.png)
+
 | year | WHO | World Bank |
 |---|---|---|
 | 2018 | 52.1 | 52.3 |
@@ -75,7 +77,7 @@ Looking at Central African Republic year by year:
 
 The WHO series moves by fractions of a year, which is how life expectancy behaves. The World Bank series swings by 20 to 40 years between adjacent years. A year-on-year change threshold would flag every one of those rows. This is the first anomaly the project found, and it was found by looking, before any detection code was written.
 
-Query: `notebooks/02_source_comparison.ipynb`.
+Query: `notebooks/02_source_comparison.ipynb`. Charts and what they mean: [docs/charts.md](docs/charts.md).
 
 ## Results so far
 
