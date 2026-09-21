@@ -23,3 +23,26 @@ flowchart LR
     WB[World Bank API<br/>paginated JSON] --> F
     OWID[Our World in Data<br/>CSV download] --> F
     F
+
+
+    ## Findings from bronze, before any cleaning
+
+Comparing life expectancy for 2019 across the three sources for every country all three cover:
+
+- The World Bank and OWID values are identical in every row, because both take the figure from UN World Population Prospects. There are two independent estimates here, not three.
+- The largest disagreement between WHO and the UN-derived value is Central African Republic: 52.9 versus 31.5, a spread of 21.4 years. Nigeria is next at 10.1.
+
+Looking at Central African Republic year by year:
+
+| year | WHO | World Bank |
+|---|---|---|
+| 2018 | 52.1 | 52.3 |
+| 2019 | 52.9 | 31.5 |
+| 2020 | 53.1 | 50.6 |
+| 2021 | 52.3 | 40.3 |
+| 2022 | | 18.8 |
+| 2023 | | 57.4 |
+
+The WHO series moves by fractions of a year, which is how life expectancy behaves. The World Bank series swings by 20 to 40 years between adjacent years. A year-on-year change threshold would flag every one of those rows. This is the first anomaly the project found, and it was found by looking, before any detection code was written.
+
+Query: `notebooks/02_source_comparison.ipynb`.

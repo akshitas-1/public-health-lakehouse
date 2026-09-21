@@ -17,3 +17,7 @@ The three OWID CSVs have different value column names (life_expectancy_0, child_
 ## 4. Notebooks live in the repo through a Databricks Git folder
 
 Notebooks created in the workspace only exist there, and Free Edition accounts can be deleted after inactivity. The repo is cloned into Databricks as a Git folder, notebooks are committed from there, and the laptop pulls them. One repo holds ingestion scripts, notebooks and docs.
+
+## 5. The World Bank and OWID are not independent sources for life expectancy
+
+Comparing 2019 values across all three sources showed the World Bank and OWID columns identical in every row; both take life expectancy from UN World Population Prospects. WHO publishes its own estimates. Silver will record the upstream origin of each value, not just the API it came from, so that "two sources agree" is never counted when the two are the same source.
