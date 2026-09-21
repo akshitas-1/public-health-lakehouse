@@ -85,7 +85,7 @@ Query: `notebooks/02_source_comparison.ipynb`. Charts and what they mean: [docs/
 - 5 bronze Delta tables in `workspace.public_health`.
 - `bronze_who`: 81,849 rows across three indicators (64,510 under-5 mortality, 12,936 life expectancy, 4,403 measles), written as one Parquet file of 2.9 MB from 56 MB of raw JSON.
 - `bronze_worldbank`: 52,470 rows, 17,490 per indicator.
-- `bronze_owid_*`: 21,565 rows (life expectancy), [rows] (child mortality), 9,048 (measles).
+- `bronze_owid_*`: 21,565 rows (life expectancy), 17066 (child mortality), 9,048 (measles).
 
 ## How to run
 
